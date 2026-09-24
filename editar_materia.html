@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UniTask - Editar Materia</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #e5e7eb;
+        }
+
+        .sidebar {
+            background-color: #080c14;
+            width: 230px;
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        .topbar {
+            background-color: #0b0f19;
+        }
+
+        .edit-card {
+            background-color: #171b26;
+            border-color: #292e3b !important;
+        }
+
+        .form-control,
+        .form-control:focus {
+            background-color: #171b26;
+            color: #e5e7eb;
+            border-color: #343a46;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 .2rem rgba(59, 130, 246, .2);
+        }
+
+        .form-control::placeholder {
+            color: #6b7280;
+        }
+
+        .sidebar-link {
+            color: #9ca3af;
+        }
+
+        .sidebar-link:hover {
+            color: white;
+            background-color: #171b26;
+        }
+
+        .sidebar-link.active {
+            color: white;
+            background-color: #4f83df;
+        }
+
+        .color-circle {
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .preview-card {
+            background-color: #171b26;
+            border-color: #292e3b !important;
+        }
+
+        .preview-color {
+            width: 32px;
+            height: 32px;
+            background-color: #3b82f6;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="d-flex min-vh-100">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar d-flex flex-column border-end border-secondary-subtle">
+
+        <!-- Logo -->
+        <div class="p-3 border-bottom border-secondary-subtle">
+
+            <div class="d-flex align-items-center gap-2">
+
+                <div class="bg-primary rounded-3 p-2">
+                    <i class="bi bi-stack fs-5"></i>
+                </div>
+
+                <div>
+                    <div class="fw-bold">
+                        UniTask
+                    </div>
+
+                    <small class="text-secondary">
+                        Gestión Académica
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- User -->
+        <div class="p-3 border-bottom border-secondary-subtle">
+
+            <div class="d-flex align-items-center gap-2">
+
+                <div class="bg-primary-subtle text-primary rounded-circle
+                            d-flex align-items-center justify-content-center"
+                     style="width: 34px; height: 34px;">
+
+                    MA
+
+                </div>
+
+                <div>
+                    <div class="small fw-semibold">
+                        María Alvarado
+                    </div>
+
+                    <small class="text-secondary">
+                        Ing. en Sistemas · 6° sem.
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="p-2 flex-grow-1">
+
+            <div class="text-uppercase text-secondary small fw-bold px-3 mt-2 mb-2">
+                Principal
+            </div>
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-grid"></i>
+                Dashboard
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-plus-circle"></i>
+                Crear Tarea
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-list-check"></i>
+                Mis Tareas
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-calendar"></i>
+                Calendario
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link active text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-book"></i>
+                Materias
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-bar-chart"></i>
+                Progreso
+
+            </a>
+
+
+            <div class="text-uppercase text-secondary small fw-bold px-3 mt-4 mb-2">
+                Herramientas
+            </div>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2 mb-1">
+
+                <i class="bi bi-gear"></i>
+                Configuración
+
+            </a>
+
+
+            <a href="#"
+               class="sidebar-link text-decoration-none rounded-3
+                      d-flex align-items-center gap-2 px-3 py-2">
+
+                <i class="bi bi-question-circle"></i>
+                Ayuda
+
+            </a>
+
+        </nav>
+
+
+        <!-- Progress -->
+        <div class="p-2">
+
+            <div class="border border-secondary-subtle rounded-4 p-3">
+
+                <div class="d-flex justify-content-between small mb-2">
+                    <span class="text-secondary">
+                        Semestre actual
+                    </span>
+
+                    <span class="text-primary fw-bold">
+                        68%
+                    </span>
+                </div>
+
+                <div class="progress bg-dark" style="height: 5px;">
+
+                    <div
+                        class="progress-bar bg-primary"
+                        style="width: 68%;">
+                    </div>
+
+                </div>
+
+                <small class="text-secondary">
+                    12 de 18 tareas completadas
+                </small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+    <main class="main-content flex-grow-1">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar border-bottom border-secondary-subtle
+                       px-4 py-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div>
+                    <h5 class="mb-0">
+                        Editar Materia
+                    </h5>
+
+                    <small class="text-secondary">
+                        Modifica los datos de la asignatura
+                    </small>
+                </div>
+
+                <i class="bi bi-bell text-secondary"></i>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <div class="container-fluid px-4 py-3">
+
+            <!-- Breadcrumb -->
+
+            <nav aria-label="breadcrumb">
+
+                <ol class="breadcrumb small">
+
+                    <li class="breadcrumb-item">
+                        <a href="#" class="text-secondary text-decoration-none">
+                            Materias
+                        </a>
+                    </li>
+
+                    <li class="breadcrumb-item active text-primary"
+                        aria-current="page">
+
+                        Editar Materia
+
+                    </li>
+
+                </ol>
+
+            </nav>
+
+
+            <!-- EDIT CARD -->
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-xl-7">
+
+                    <div class="edit-card border rounded-4 shadow-sm">
+
+                        <!-- Card header -->
+
+                        <div class="p-4 pb-2">
+
+                            <div class="d-flex align-items-center gap-3">
+
+                                <div class="bg-primary-subtle text-primary
+                                            rounded-3 p-2">
+
+                                    <i class="bi bi-book"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h5 class="mb-0">
+                                        Editar materia
+                                    </h5>
+
+                                    <small class="text-secondary">
+                                        Actualiza la información de la asignatura seleccionada.
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Form -->
+
+                        <div class="p-4">
+
+                            <!-- Name -->
+
+                            <div class="mb-3">
+
+                                <label for="materia"
+                                       class="form-label small fw-semibold">
+
+                                    Nombre de la materia
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="materia"
+                                    class="form-control"
+                                    value="Cálculo Diferencial"
+                                >
+
+                            </div>
+
+
+                            <!-- Description -->
+
+                            <div class="mb-4">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <label for="descripcion"
+                                           class="form-label small fw-semibold">
+
+                                        Descripción
+
+                                    </label>
+
+                                    <small class="text-secondary">
+                                        Opcional
+                                    </small>
+
+                                </div>
+
+                                <textarea
+                                    id="descripcion"
+                                    class="form-control"
+                                    rows="4"
+                                >Curso de matemáticas del primer semestre. Profesor: Dr. Carlos Méndez. Horario: Lunes y miércoles de 8:00 a 10:00 a.m.</textarea>
+
+                            </div>
+
+
+                            <!-- Colors -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label small fw-semibold">
+                                    <i class="bi bi-palette me-1"></i>
+                                    Color identificador
+                                </label>
+
+                                <div class="d-flex flex-wrap gap-3">
+
+                                    <div class="color-circle bg-danger"></div>
+
+                                    <div class="color-circle bg-warning"></div>
+
+                                    <div class="color-circle bg-success"></div>
+
+                                    <div class="color-circle bg-info"></div>
+
+                                    <div class="color-circle bg-primary"></div>
+
+                                    <div class="color-circle bg-secondary"></div>
+
+                                    <div class="color-circle bg-dark"></div>
+
+                                </div>
+
+                                <small class="text-secondary">
+                                    Color seleccionado: <span class="text-primary">Azul</span>
+                                </small>
+
+                            </div>
+
+
+                            <!-- Preview -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label small fw-semibold">
+                                    Vista previa
+                                </label>
+
+                                <div class="preview-card border rounded-4 p-3">
+
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <div>
+
+                                            <h6 class="mb-1">
+                                                Cálculo Diferencial
+                                            </h6>
+
+                                            <p class="text-secondary small mb-2">
+                                                Curso de matemáticas del primer semestre.
+                                                Profesor: Dr. Carlos Méndez.
+                                                Horario: Lunes y miércoles de 8:00 a 10:00 a.m.
+                                            </p>
+
+                                            <span class="badge bg-primary-subtle text-primary">
+                                                Azul
+                                            </span>
+
+                                            <small class="text-secondary ms-2">
+                                                12 tareas
+                                            </small>
+
+                                        </div>
+
+                                        <div class="preview-color"></div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Footer buttons -->
+
+                        <div class="border-top border-secondary-subtle p-3">
+
+                            <div class="d-flex justify-content-between">
+
+                                <button class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-lg me-1"></i>
+                                    Cancelar
+                                </button>
+
+                                <div class="d-flex gap-2">
+
+                                    <button class="btn btn-danger">
+
+                                        <i class="bi bi-trash me-1"></i>
+
+                                        Eliminar Materia
+
+                                    </button>
+
+                                    <button class="btn btn-primary">
+
+                                        <i class="bi bi-floppy me-1"></i>
+
+                                        Guardar Cambios
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
