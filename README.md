@@ -1,15 +1,17 @@
-# Actividad Git y GitHub
+# Gestión de Tareas Universitarias
 
-Este proyecto fue desarrollado como práctica académica para aprender el uso de Git, GitHub, ramas y Pull Requests.
+Plataforma web para que los estudiantes universitarios organicen, administren y hagan seguimiento a sus tareas, proyectos, talleres, exposiciones y evaluaciones académicas de forma centralizada.
 
-## Estructura del proyecto
+Proyecto desarrollado para la asignatura Programación Web (IF2003), grupo 603.
 
-- `index.html`: Página principal del sitio web.
-- `servicios.html`: Página que muestra los servicios ofrecidos.
-- `contacto.html`: Página con información de contacto.
+## Integrantes
 
-## Tecnologías utilizadas
+- Alan Pareja Grisales
+- Brayan Cifuentes
+- Samuel Arbelaez
 
-- HTML5
-- Git
-- GitHub
+## Documentación
+
+- [Documento de definición del proyecto](docs/definicion.md)
+- [Mockup](docs/mockup/)
+- [Presentación](docs/presentacion.pptx)
